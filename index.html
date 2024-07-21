@@ -108,12 +108,12 @@
         <div class="row">
             <div class="col-md-4">
                 <i class="fas fa-chart-line fa-3x"></i>
-                <h3>Verhoogde Conversie</h3>
+                <h3>Conversie</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="col-md-4">
                 <i class="fas fa-user fa-3x"></i>
-                <h3>Verbeterde Gebruikerservaring</h3>
+                <h3>Gebruikerservaring</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="col-md-4">
@@ -154,24 +154,40 @@
 
     <section class="contact-container">
         <div class="left-col">
+            <div class="overlay_left"></div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+31 123 456 789</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Straatnaam 123, 1000 AB Amsterdam</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@example.com</span>
+            </div>
+          </div>
         </div>
         <div class="right-col">
           <h1>Contacteer ons</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere minima reiciendis cumque pariatur labore suscipit dolores recusandae nisi voluptatem vel obcaecati consectetur quasi dolorum, excepturi esse quidem numquam eaque.</p>
           
-        <form id="contact-form" method="post">
-            <label for="name">Volledige Naam</label>
-            <input type="text" id="name" name="name" placeholder="Uw Volledige Naam" required>
-            <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="Uw E-mailadres" required>
-            <label for="message">Bericht</label>
-            <textarea rows="6" placeholder="Uw Bericht" id="message" name="message" required></textarea>
-            <button type="submit" id="submit" name="submit">Verzenden</button>
-      </form>
-      <div id="error"></div>
-      <div id="success-msg"></div>
+          <form id="contact-form" method="post">
+              <label for="name">Volledige Naam</label>
+              <input type="text" id="name" name="name" placeholder="Uw Volledige Naam" required>
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="Uw E-mailadres" required>
+              <label for="message">Bericht</label>
+              <textarea rows="6" placeholder="Uw Bericht" id="message" name="message" required></textarea>
+              <button type="submit" id="submit" name="submit">Verzenden</button>
+          </form>
+          <div id="error"></div>
+          <div id="success-msg"></div>
         </div>
-      </section>
+    </section>
+    
       
 
       <footer id="footer" class="footer">

@@ -306,7 +306,9 @@ input:checked + .slider:before {
   .col-md-4 p {
     margin-bottom: 10px;
 } 
-
+.features div div , .benefits div div{
+    cursor: pointer;
+}
 
 /* Contact  */
 .contact-container {
@@ -315,15 +317,50 @@ input:checked + .slider:before {
     height: 100vh;
     background: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
+    position: relative;
 }
 
 .left-col {
     width: 45vw;
     height: 100%;
-    background-image: url("../img/1.jpg");
+    background-image: url("../img/1234.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.overlay_left {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.contact-info {
+    z-index: 2;
+    color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
 
 .right-col {
@@ -386,6 +423,11 @@ textarea::placeholder {
     color: var(--primary-color);
 }
 
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
 input,
 textarea {
     color: var(--primary-color);
@@ -440,51 +482,64 @@ form button:active {
 }
 
 @media only screen and (max-width: 950px) {
-    html{
+    html {
         font-size: 12px;
     }
+
     .logo {
         width: 8rem;
     }
-    .navbar .container{
+
+    .navbar .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     h1 {
         font-size: 1.75rem;
     }
+
     p {
         font-size: 1rem;
     }
-    .contact-container{
+
+    .contact-container {
         height: 75vh;
     }
-    .left-col{
+
+    .left-col {
         display: none;
     }
-    .right-col{
+
+    .right-col {
         width: 100%;
     }
-    .right-col p{
+
+    .right-col p {
         width: 75vw;
     }
+
     input,
     textarea,
     form button {
         font-size: 0.65rem;
         width: 75vw;
     }
+
     .description {
         font-size: 0.3rem;
         margin-left: 0.4rem;
     }
+
     form button {
         width: 7rem;
     }
+
     .theme-switch-wrapper {
         width: 50px;
     }
+
     .theme-switch {
         height: 26px;
         width: 43px;
@@ -521,6 +576,7 @@ footer {
     padding: 20px 0;
     border-top: 1px solid var(--primary-color);
     text-align: center;
+    margin-top: auto;
 }
 
 footer p {
@@ -534,27 +590,24 @@ footer p {
     margin: 0 10px;
 }
 
-.social-links a:hover {
-    color: #f7dc6f;
+.social-links i:hover {
+    color: var(--hover-link-color);
 }
 
 .facebook i {
-    color: #1877F2;
+    color: var(--primary-color);
 }
 
 .instagram i {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
 }
 
 .twitter i {
-    color: #1DA1F2;
+    color: var(--primary-color);
 }
 
 .linkedln i {
-    color: #0077b5;
+    color: var(--primary-color);
 }
 
 .scroll-effect {

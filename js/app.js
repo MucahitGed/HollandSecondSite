@@ -1,3 +1,22 @@
+//linking control
+document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.features .col-md-4').forEach(function(box) {
+            box.addEventListener('click', function() {
+                const feature = box.querySelector('h3').textContent.toLowerCase();
+                window.location.href = `feature-details.html?feature=${feature}`;
+            });
+        });
+        document.querySelectorAll('.benefits .col-md-4').forEach(function(box) {
+          box.addEventListener('click', function() {
+              const feature = box.querySelector('h3').textContent.toLowerCase();
+              window.location.href = `benefits-details.html?benefit=${feature}`;
+          });
+      });
+    });
+
+     
+
+
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {
@@ -50,36 +69,38 @@ const validate = (e) => {
 const emailIsValid = email => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
-
-//submitBtn.addEventListener('click', validate);
-
+//slider burda baslar
 const navCircles = document.querySelectorAll('.naver-circle');
 const slides = document.querySelectorAll('.header_slide');
 
 let currentSlide = 0;
+let slideInterval;
 
-navCircles.forEach((circle, index) => {
-  circle.addEventListener('click', () => {
-    slides.forEach((slide) => {
-      slide.classList.remove('active');
-    });
-    slides[index].classList.add('active');
-    navCircles.forEach((navCircle) => {
-      navCircle.classList.remove('active');
-    });
-    circle.classList.add('active');
-    currentSlide = index;
-  });
-});
-
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
+const goToSlide = (index) => {
   slides.forEach((slide) => {
     slide.classList.remove('active');
   });
-  slides[currentSlide].classList.add('active');
+  slides[index].classList.add('active');
   navCircles.forEach((navCircle) => {
     navCircle.classList.remove('active');
   });
-  navCircles[currentSlide].classList.add('active');
-}, 5000);
+  navCircles[index].classList.add('active');
+  currentSlide = index;
+};
+
+const startInterval = () => {
+  slideInterval = setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+  }, 5000);
+};
+
+navCircles.forEach((circle, index) => {
+  circle.addEventListener('click', () => {
+    goToSlide(index);
+    clearInterval(slideInterval); 
+    startInterval(); 
+  });
+});
+
+startInterval();

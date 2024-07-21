@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits Details</title>
+    <link rel="stylesheet" href="./css/benefits-details.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Data Havuz</a>
+
+            <div class="theme-switch-wrapper d-flex align-items-center justify-content-center">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="benefit" class="benefit-details">
+            <div class="container">
+                <h2 id="benefit-title">Title Here</h2>
+                <div class="benefit-content">
+                    <img id="benefit-image" alt="Benefit Image">
+                    <p id="benefit-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, cum. Ipsam sunt vitae, quae sit voluptatibus iste corporis dignissimos dolores quos ea nemo impedit quo. Quaerat quo fuga architecto praesentium!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank" class="text-white mx-2 facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="text-white mx-2 twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="text-white mx-2 instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="text-white mx-2 linkedln"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="mt-3 text-footer">© 2024 Data Havuz. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const benefit = params.get('benefit');
+            console.log(benefit)
+            const benefitData = {
+                kosteneffectief: {
+                    title: 'Kosteneffectief',
+                    image: './img/1.jpg',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, cum. Ipsam sunt vitae, quae sit voluptatibus iste corporis dignissimos dolores quos ea nemo impedit quo. Quaerat quo fuga architecto praesentium!.'
+                },
+                conversie: {
+                    title: 'Conversie',
+                    image: './img/5.jpg',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, cum. Ipsam sunt vitae, quae sit voluptatibus iste corporis dignissimos dolores quos ea nemo impedit quo. Quaerat quo fuga architecto praesentium!'
+                },
+                gebruikerservaring: {
+                    title: 'Gebruikerservaring',
+                    image: './img/4.jpg',
+                    description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, cum. Ipsam sunt vitae, quae sit voluptatibus iste corporis dignissimos dolores quos ea nemo impedit quo. Quaerat quo fuga architecto praesentium!'
+                }
+            };
+
+            if (benefitData[benefit]) {
+                document.getElementById('benefit-title').textContent = benefitData[benefit].title;
+                document.getElementById('benefit-image').src = benefitData[benefit].image;
+                document.getElementById('benefit-description').textContent = benefitData[benefit].description;
+            }
+        });
+    </script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
